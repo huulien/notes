@@ -1,0 +1,15 @@
+#!/bin/sh
+export PATH="/bin:/sbin:/usr/sbin:/usr/bin"
+
+OLDGW=`ifconfig | grep 124.160.102.10 | awk -F ' ' '{print $2}'`
+
+if [ ! -e /tmp/pptp_oldgw ]; then
+    if [ "${OLDGW}" = "" ]; then
+    exit 0
+    fi
+    echo "${OLDGW}" > /tmp/pptp_oldgw
+fi
+
+dscacheutil -flushcache
+route add 10.0.31.0/24 "${OLDGW}"
+

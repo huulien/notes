@@ -16,3 +16,6 @@ vi /opt/etc/nginx/nginx.conf
 /opt/etc/init.d/S80nginx restart
 tail -n 100 -f /opt/var/log/nginx/error.log
 ```
+
+
+
