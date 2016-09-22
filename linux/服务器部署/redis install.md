@@ -53,3 +53,4 @@ redis-dump -u :password@ip > redis.json
 ## 导入数据
 cat redis.json | redis-load -u :password@ip:prot
 
+
