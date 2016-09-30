@@ -107,4 +107,12 @@ CREATE SCHEMA schema_name;
 grant connect on database postgres to schema_name;
 grant ALL PRIVILEGES on schema schema_name to schema_name;
 grant ALL PRIVILEGES on all tables in schema schema_name to schema_name;
+
+--创建只读用户
+./createuser --interactive readonly;    -- 三个问题都是n
+
+alter user postgres with password 'password';
+
+grant usage on schema schema_name to readonly;
+grant select  on all tables in schema schema_name to readonly;
 ```

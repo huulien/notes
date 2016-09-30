@@ -15,5 +15,3 @@ yum install -y iptables-services
 iptables -I INPUT -p tcp --dport 2181 -j ACCEPT
 service iptables save
 service iptables restart
-
-# 获取网页管理工具
